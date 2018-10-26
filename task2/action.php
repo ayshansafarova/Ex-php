@@ -56,7 +56,7 @@ if(isset($_POST["submit"])) {
                 }
 
             }
-        echo "<li class='same-day'>" . $count1 . "</li>";
+        echo "<li class='same-day'>" . $count1 . " gun" . "</li>";
 
         ?>
     </ul>
@@ -84,9 +84,15 @@ if(isset($_POST["submit"])) {
                     }
                 }
             }
-        echo "<li class='same-day'>" . $count2 . "</li>";
+        echo "<li class='same-day'>" . $count2 . " gun" . "</li>";
         ?>
     </ul>
+</div>
+<div style="clear: both; background-color: black;" class="same-day">
+    <?php
+    $count3 = $count1 + $count2;
+        echo "Toplam: " . $count3 . " gun";
+    ?>
 </div>
 </body>
 <style>
