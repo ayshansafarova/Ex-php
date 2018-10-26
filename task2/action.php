@@ -8,6 +8,9 @@ if(isset($_POST["submit"])) {
     $date1 = $_REQUEST["date1"]; //string
     $date2 = $_REQUEST["date2"];
 
+    $count1 = 0;
+    $count2 = 0;
+
     $dateTime1 = DateTime::createFromFormat("Y-m-d", $date1);
     $dateTime2 = DateTime::createFromFormat("Y-m-d", $date2);
     $period = new DatePeriod($dateTime1, new DateInterval('P1D'), $dateTime2);
@@ -49,8 +52,12 @@ if(isset($_POST["submit"])) {
 
                 if($value -> format("w") == 0 || $value -> format("w") == 6){
                     echo "<li>" . $value -> format("Y-m-d") . "</li>";
+                    $count1 ++;
                 }
+
             }
+        echo "<li class='same-day'>" . $count1 . "</li>";
+
         ?>
     </ul>
 </div>
@@ -58,22 +65,26 @@ if(isset($_POST["submit"])) {
     <h3>Qeyri-iş günləri</h3>
     <ul>
         <?php
-        $doc = new DOMDocument();
-        $ul = $doc->getElementsByTagName('ul')->item(1);
+//        $doc = new DOMDocument();
+//        $ul = $doc->getElementsByTagName('ul')->item(1);
 ////        $node = $ul->childNodes->item(0);
-        $li = $doc->createElement('li');
+//        $li = $doc->createElement('li');
 
             foreach ($period as $key => $value){
                 foreach($holidays as $date_value => $date_key){
                     if ($value -> format("m-d") == $date_value ){
-                        if (array_count_values($holidays)[$date_key] > 1) {
-                            $li->setAttribute('class', 'same-holiday');
-                            $ul->appendChild($li);
-                        }
+//                        if (array_count_values($holidays)[$date_value] > 1) {
+//                            break;
+//                        }
+//                            $li->setAttribute('class', 'same-holiday');
+//                            $ul->appendChild($li);
+//                        }
                         echo "<li>" . $date_value . " - " . $date_key . "</li>";
+                        $count2++;
                     }
                 }
             }
+        echo "<li class='same-day'>" . $count2 . "</li>";
         ?>
     </ul>
 </div>
