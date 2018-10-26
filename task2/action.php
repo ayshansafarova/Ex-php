@@ -91,7 +91,7 @@ if(isset($_POST["submit"])) {
 <div style="clear: both; background-color: black;" class="same-day">
     <?php
     $count3 = $count1 + $count2;
-        echo "Toplam: " . $count3 . " gun";
+    echo "<li class='same-day'>" . $count3 . " gun" . "</li>";
     ?>
 </div>
 </body>
