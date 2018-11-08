@@ -108,7 +108,7 @@ function test_input($data) {
                             <div class="error"><?php echo $emailEr ?></div>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="text" class="form-control" id="subject" name="phone" placeholder="Phone Number: ex, 055 785 83 82">
+                            <input type="text" class="form-control" id="subject" name="phone" placeholder="Phone Number: ex, 0557858382">
                             <div class="error"><?php echo $phoneEr ?></div>
                         </div>
                         <div class="form-group col-md-12">
@@ -142,7 +142,7 @@ function test_input($data) {
                         </div>
                     </form>
                     <div class="form-group col-md-12">
-                        <label>
+                        <label class="result">
                             <?php
                             if($count == 5){
                                 echo "Emailinize rezervasiya melumatlari gonderilib";
@@ -158,6 +158,11 @@ function test_input($data) {
 
 </body>
 <style>
+    .result{
+        color: #ec29dd;
+        font-size: 18px;
+        font-weight: 600;
+    }
     .table_form {
         background: #f9f9ff;
         height: 100%;
