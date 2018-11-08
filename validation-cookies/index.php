@@ -2,16 +2,13 @@
 $name = $phone = $email = $date = $event = "";
 $nameEr = $phoneEr = $dateEr = $emailEr = $eventEr = "";
 $count = 0;
-
 //session
 session_start();
 $_SESSION['name'] = $name;
 $_SESSION['email'] = $email;
 $_SESSION['phone'] = $phone;
-
 session_destroy();
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
     if (empty($_POST["name"])) {
         $nameEr = "Ad daxil edin!";
     }else {
@@ -23,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $count++;
         }
     }
-
     if (empty($_POST["email"])) {
         $emailEr = "Email daxil edin!";
     }else {
@@ -35,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $count++;
         }
     }
-
     if (empty($_POST["phone"])) {
         $phoneEr = "Telefon nomresini daxil edin!";
     }else {
@@ -47,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $count++;
         }
     }
-
     if (empty($_POST["date"])) {
         $dateEr = "Tarix daxil edin!";
     }else {
@@ -59,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             $count++;
         }
     }
-
     if (empty($_POST["event"])) {
         $eventEr = "Eventi secin!";
     }else {
@@ -67,35 +60,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $count ++;
     }
 }
-
-
 function test_input($data) {
     $data = trim($data); //strips unnecessary characters (extra space, tab, newline)
     $data = stripslashes($data); // removes slash
     $data = htmlspecialchars($data); //converts special characters to HTML entities like <>, &lt; and &gt
     return $data;
 }
-
 //$_SERVER["PHP_SELF"] is a super global variable that returns the filename of the currently executing script.
 //If PHP_SELF is used in your page then a user can enter a slash (/) and then some Cross Site Scripting (XSS) commands to execute.
 //The preg_match() function searches a string for pattern, returning true if the pattern exists, and false otherwise.
 //A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer.
 //Each time the same computer requests a page with a browser, it will send the cookie too.
 //With PHP, you can both create and retrieve cookie values.
-
 ?>
 <html>
 <body>
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
-        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="vendors/animate-css/animate.css">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <section class="book_table_area section_gap">
     <div class="container">
@@ -215,6 +204,3 @@ function test_input($data) {
 <script src="vendors/swiper/js/swiper.min.js"></script>
 <script src="js/theme.js"></script>
 </html>
-
-
-
