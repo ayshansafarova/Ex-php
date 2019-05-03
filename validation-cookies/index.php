@@ -3,10 +3,10 @@ $name = $phone = $email = $date = $event = "";
 $nameEr = $phoneEr = $dateEr = $emailEr = $eventEr = "";
 $count = 0;
 //session
-session_start();
-$_SESSION['name'] = $name;
-$_SESSION['email'] = $email;
-$_SESSION['phone'] = $phone;
+//session_start();
+//$_SESSION['name'] = $name;
+//$_SESSION['email'] = $email;
+//$_SESSION['phone'] = $phone;
 // session_destroy();
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST["name"])) {
@@ -102,15 +102,15 @@ function test_input($data) {
                     <p>Who are in extremely love with eco friendly system lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <form class="book_table_form row" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group col-md-12">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name: ex, Ayshan" value="<?php if(isset($_SESSION['name'])) echo $name ;?>">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name: ex, Ayshan" value="">
                             <div class="error"><?php echo $nameEr ?></div>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address: ex, lorem@mail.ru" value="<?php if(isset($_SESSION['email'])) echo $email ;?>">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address: ex, lorem@mail.ru" >
                             <div class="error"><?php echo $emailEr ?></div>
                         </div>
                         <div class="form-group col-md-12">
-                            <input type="text" class="form-control" id="subject" name="phone" placeholder="Phone Number: ex, 0557858382" value="<?php if(isset($_SESSION['phone'])) echo $phone ;?>">
+                            <input type="text" class="form-control" id="subject" name="phone" placeholder="Phone Number: ex, 0557858382">
                             <div class="error"><?php echo $phoneEr ?></div>
                         </div>
                         <div class="form-group col-md-12">
